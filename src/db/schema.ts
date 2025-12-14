@@ -14,7 +14,7 @@ export const foodTable = sqliteTable("food", s => ({
 export const food_ingridientsTable = sqliteTable("food_ingridients", s => ({
   foodId: s.integer({mode: "number"}).references(() => foodTable.id),
   ingridientId: s.integer({mode: "number"}).references(() => ingridientsTable.id),
-  amount: s.text()
+  amount: s.text().notNull()
 }), 
 (table) => [
   primaryKey({columns: [table.foodId, table.ingridientId]})
