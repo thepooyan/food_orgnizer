@@ -1,2 +1,7 @@
 @import "tailwindcss";
 @import "~/styles/global.scss"
+
+@utility box-* {
+    width: --spacing(--value(integer) * 1);
+    height: --spacing(--value(integer) * 1);
+}
