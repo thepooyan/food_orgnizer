@@ -1,4 +1,5 @@
 *.sqlite
+bun.lockb
 
 dist
 .wrangler
