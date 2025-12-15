@@ -4,12 +4,18 @@
 //   }
 // } satisfies RouteDefinition;
 
+import { createAsync } from "@solidjs/router";
+import { foodQuery } from "~/server/queries";
+
 export default function Home() {
+  const food = createAsync(() => foodQuery())
   
   return (
     <>
-    <div class=""></div>
-    hi
+    {food()?.map(f => {
+      return f.name
+    })}
+
     </>
   );
 }
