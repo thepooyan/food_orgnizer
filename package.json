@@ -14,6 +14,7 @@
     "drizzle-kit": "^0.31.8"
   },
   "dependencies": {
+    "@kobalte/core": "^0.13.11",
     "@solidjs/router": "^0.15.0",
     "@solidjs/start": "^1.1.0",
     "@tailwindcss/vite": "^4.1.18",

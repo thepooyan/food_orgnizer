@@ -1,3 +1,5 @@
 @import "tailwindcss";
 @import "~/styles/global.scss";
+@import "~/styles/shadcn.css";
 @import "~/styles/utilities.css";
+@config "../tailwind.config.ts";
