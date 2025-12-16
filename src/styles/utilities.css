@@ -1,0 +1,16 @@
+@utility center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@utility ltr {
+  direction: ltr;
+}
+
+@utility rtl {
+  direction: rtl;
+}
+@utility box-* {
+  width: calc(var(--spacing) * --value(integer));
+  height: calc(var(--spacing) * --value(integer));
+}
