@@ -5,20 +5,22 @@
 // } satisfies RouteDefinition;
 
 import { createAsync } from "@solidjs/router";
-import { createEffect } from "solid-js";
-import { Button } from "~/components/ui/button";
-import { foodQuery } from "~/server/queries";
+import { Show } from "solid-js";
+import IngridientList from "~/components/IngridientList";
+import { foodQuery, ingridientsQuery } from "~/server/queries";
 
 export default function Home() {
   const food = createAsync(() => foodQuery())
+  const ing = createAsync(() => ingridientsQuery())
 
   return (
     <>
-      {food()?.map(f => <div>
-        <span>{f.name}</span>
-        {f.ingridients.map(i => <span>{i.ingridientId} {i.amount}</span>)}
-      </div>)}
-      <Button>hi</Button>
+      <Show when={food()}>
+        {i => <IngridientList ingridients={i}/>}
+      </Show>
+      {/* <Show when={ing()}>
+        {i => <IngridientList ingridients={i}/>}
+      </Show> */}
     </>
   );
 }

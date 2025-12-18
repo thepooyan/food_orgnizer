@@ -1,10 +1,12 @@
-import { relations } from "drizzle-orm";
+import { InferInsertModel, InferSelectModel, relations } from "drizzle-orm";
 import { primaryKey, sqliteTable } from "drizzle-orm/sqlite-core";
 
 export const ingridientsTable = sqliteTable("ingridients", s => ({
   id: s.integer({ mode: "number" }).primaryKey({ autoIncrement: true }),
   name: s.text().notNull().unique(),
 }));
+
+export type NewIngridient = InferInsertModel<typeof ingridientsTable>;
 
 export const foodTable = sqliteTable("food", s => ({
   id: s.integer({ mode: "number" }).primaryKey({ autoIncrement: true }),

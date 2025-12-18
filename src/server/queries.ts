@@ -1,10 +1,12 @@
 "use server"
 
 import { query } from "@solidjs/router"
-import { db } from "~/db"
+import { getFoods, getIngridients } from "~/db/DataFetching"
 
-const getFoods = () => db.query.foodTable.findMany({with: {ingridients: true}})
-export type Food = Awaited<typeof getFoods>
 export const foodQuery = query(async () => {
     return getFoods()
+}, "food")
+
+export const ingridientsQuery = query(async () => {
+    return getIngridients()
 }, "food")
