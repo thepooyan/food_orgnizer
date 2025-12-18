@@ -1,16 +1,16 @@
 import { Accessor, For } from "solid-js"
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "./ui/table"
-import { Ingridient } from "~/db/DataFetching"
+import { Food } from "~/db/DataFetching"
 
 
 interface props {
-    ingridients: Accessor<Ingridient[]>
+    ingridients: Accessor<Food[]>
 }
-const IngridientList = ({ ingridients }:props) => {
+const FoodList = ({ ingridients }:props) => {
   return (
     <div>
         <Table class="max-w-xl">
-            <TableCaption>لیست مواد غذایی</TableCaption>
+            <TableCaption>لیست غذا</TableCaption>
             <TableHeader>
                 <TableRow>
                     <TableHead>نام</TableHead>
@@ -30,4 +30,4 @@ const IngridientList = ({ ingridients }:props) => {
   )
 }
 
-export default IngridientList
+export default FoodList

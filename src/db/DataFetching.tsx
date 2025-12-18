@@ -8,4 +8,4 @@ export const getFoods = () => db.query.foodTable.findMany({with: {ingridients: t
 export type Food = DbListEntity<typeof getFoods>
 
 export const getIngridients = () => db.query.ingridientsTable.findMany()
-export type Ingridient = DbListEntity<typeof getFoods>
+export type Ingridient = DbListEntity<typeof getIngridients>
